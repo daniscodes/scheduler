@@ -119,13 +119,17 @@ storiesOf("Button", module)
       .add("Initial", () => (
         <InterviewerList
           interviewers={interviewers}
-          setInterviewer={action("setInterviewer")}
         />
       ))
-      .add("Preselected", () => (
+      .add("Selected", () => (
         <InterviewerList
           interviewers={interviewers}
           interviewer={3}
+        />
+      ))
+      .add("Clickable", () => (
+        <InterviewerList
+          interviewers={interviewers}
           setInterviewer={action("setInterviewer")}
         />
       ));
