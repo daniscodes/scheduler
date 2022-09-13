@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import InterviewerList from "components/InterviewerList";
-import Button from "components/Button";
+<Button confirm onClick={()=>props.onSave(name, interviewer)} >Save</Button>
 
 // --------------- Component Function --------------- //
 
