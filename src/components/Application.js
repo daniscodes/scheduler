@@ -19,7 +19,6 @@ export default function Application(props) {
     console.log("day from setDay:", day);
     return setState({ ...state, day })};
 
-  // setState(prev => ({ ...prev, days }));
   const setDays = (days) => {
     //... your code here ...
     setState(prev => setState({...prev, days}));
@@ -59,8 +58,29 @@ export default function Application(props) {
       data: appointment
     }
     return axios(req).then(response => {
-      console.log("response from axios put=====>", response.data);
       setState({...state, appointments})
+    })
+  }
+
+  function cancelInterview(id){
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    const url =`http://localhost:8001/api/appointments/${id}`;
+
+    let req={
+      url,
+      method: 'DELETE',
+      data:appointment
+    }
+    return axios(req).then(response =>{
+      setState({...state, appointments});
     })
   }
 
@@ -78,6 +98,7 @@ export default function Application(props) {
       interview={interview}
       interviewers={interviewers}
       bookInterview={bookInterview}
+      cancelInterview={cancelInterview}
     />
   );
 });
