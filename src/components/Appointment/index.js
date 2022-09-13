@@ -44,11 +44,8 @@ export default function Appointment(props) {
       .catch(() => {
         console.log("inside the catch block........");
         transition(ERROR_DELETE,true)
-  
        });
-
   }
-
 
   return (
     <article className="appointment" >
