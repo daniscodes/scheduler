@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import InterviewerList from "components/InterviewerList";
 <Button confirm onClick={()=>props.onSave(name, interviewer)} >Save</Button>
 
-// --------------- Component Function --------------- //
-
 export default function Form(props) {
 
   const [student, setStudent] = useState(props.student || "");
@@ -34,11 +32,11 @@ export default function Form(props) {
     setError("");
     props.onSave(student, interviewer);
   }
-  // --------------- Form component --------------- //
+
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
-        <form onSubmit={e => e.preventDefault()} autoComplete="off">
+      <form autoComplete="off" onSubmit={event => event.preventDefault()}>
           <input
             data-testid="student-name-input"
             className="appointment__create-input text--semi-bold"
