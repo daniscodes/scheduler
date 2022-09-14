@@ -107,9 +107,9 @@ export default function useApplicationData() {
       method: 'DELETE',
       data: appointment
     }
-    return axios(req).then(response => {
-      setState({ ...state, appointments, days});
-    })
+    return axios.delete(url, appointment).then(()=>{
+      setState({...state, appointments, days });
+    });
   }
 
   return {
