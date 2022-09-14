@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import InterviewerList from "components/InterviewerList";
-<Button confirm onClick={()=>props.onSave(name, interviewer)} >Save</Button>
+import Button from "components/Button";
 
 export default function Form(props) {
 
@@ -20,19 +20,23 @@ export default function Form(props) {
   };
 
   function validate() {
-    if (name === "") {
+    if (student === "") {
       setError("Student name cannot be blank");
       return;
     }
-    
+    if (interviewer === null) {
+      setError("You must select an interviewer");
+      return
+    }
+
     setError("");
-    props.onSave(name, interviewer);
+    props.onSave(student, interviewer);
   }
 
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
-      <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+        <form onSubmit={e => e.preventDefault()} autoComplete="off">
           <input
             data-testid="student-name-input"
             className="appointment__create-input text--semi-bold"
@@ -53,7 +57,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={props.onSave}>Save</Button>
+          <Button confirm onClick={validate}>Save</Button>
         </section>
       </section>
     </main>

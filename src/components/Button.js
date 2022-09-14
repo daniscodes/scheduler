@@ -1,8 +1,6 @@
 import React from "react";
-
-import "components/Button.scss";
-
 import classNames from "classnames";
+import "components/Button.scss";
 
 export default function Button(props) {
   const buttonClass = classNames("button", {
@@ -14,8 +12,7 @@ export default function Button(props) {
     <button
       className={buttonClass}
       onClick={props.onClick}
-      disabled={props.disabled}
-    >
+      disabled={props.disabled}>
       {props.children}
     </button>
   );
