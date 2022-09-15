@@ -10,6 +10,7 @@ import Confirm from "./Confirm";
 import Error from "./Error";
 import useVisualMode from "hooks/useVisualMode";
 
+// Component function //
 export default function Appointment(props) {
   const [newInterview, setNewInterview] = useState(false);
   const EMPTY = "EMPTY";
@@ -26,6 +27,7 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
+// Save function //
   function save(name, interviewer) {
 
     const interview = {
@@ -42,6 +44,7 @@ export default function Appointment(props) {
 
   }
 
+// Delete function //
   function deleteAppointment(event) {
     transition(DELETING, true);
 
@@ -51,16 +54,19 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_DELETE, true));
   }
 
+// Add function //
   function onAdd() {
     transition(CREATE)
     setNewInterview(true);
   }
 
+// Edit function //
   function onEdit() {
     transition(EDIT)
     setNewInterview(false);
   }
 
+// Appointment component //
   return (
 
     <article className="appointment" data-testid="appointment">

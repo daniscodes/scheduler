@@ -53,6 +53,7 @@ const fixtures = {
   }
 };
 
+// axios GET request //
 export default {
   defaults: { baseURL: "" },
   get: jest.fn(url => {
@@ -81,6 +82,7 @@ export default {
     }
   }),
 
+// Axios PUT request //
   put: jest.fn(() => {
     return Promise.resolve({
       status: 204,
@@ -88,6 +90,7 @@ export default {
     });
   }),
 
+// Axios DELETE request //
   delete: jest.fn(() => {
     return Promise.resolve({
       status: 200,

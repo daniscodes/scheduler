@@ -1,7 +1,9 @@
 import React from "react";
 
+// Component function //
 export default function Status(props) {
 
+// Status component //  
   return (
     <main className="appointment__card appointment__card--status">
       <img

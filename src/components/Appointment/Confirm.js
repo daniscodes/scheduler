@@ -1,10 +1,10 @@
-
-
 import React from "react";
 import Button from "components/Button";
 
+// Component function //
 export default function Confirm(props) {
 
+// Confirm component //  
   return (
     <main className="appointment__card appointment__card--confirm">
       <h1 className="text--semi-bold">{props.message}</h1>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import "./InterviewerList.scss"
 import InterviewerListItem from "./InterviewerListItem";
 
+// Component function //
 export default function InterviewerList(props) {
 
   const interviewers = props.interviewers.map(interviewer => {
@@ -18,6 +19,7 @@ export default function InterviewerList(props) {
     )
   });
 
+// Interview component //
   return (
     <section className="interviewers">
       <h4 className="interviewers__header text--light">interviewer</h4>
